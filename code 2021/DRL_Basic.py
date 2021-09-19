@@ -30,7 +30,7 @@ class ShowerEnv(Env):
         self.length = 60
         
     def step(self, action):
-        # Apply action
+        # Apply action for each state
         if(action<10):
             if(action==0):
                 self.state[0]=self.state[0]+1
@@ -77,7 +77,7 @@ class ShowerEnv(Env):
         self.length -= 1 
             
         
-        # Calculate reward
+        # Calculate reward in ranges
         rewardMulti=0 
         
         if(self.state[0]>=-0.290698 and self.state[0]<=-133.441860):
@@ -113,16 +113,13 @@ class ShowerEnv(Env):
         else:
             done = False
         
-        # Apply noise
-        #self.state += random.randint(-1,1)
-        # Set placeholder for info
+        
         info = {}
         
         # Return step information
         return self.state, reward, done, info
 
     def render(self):
-        # Implement viz
         pass
     
     def reset(self):
