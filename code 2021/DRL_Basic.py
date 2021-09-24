@@ -112,6 +112,7 @@ class ShowerEnv(Env):
             done = True
         else:
             done = False
+     
         
         
         info = {}
